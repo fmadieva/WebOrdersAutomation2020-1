@@ -1,10 +1,7 @@
 package com.weborders.utilities;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,6 +13,11 @@ import java.util.List;
 import java.util.Set;
 
 public class BrowserUtilities {
+
+    // same for everyone
+    private static ThreadLocal<WebDriver> driverpool = new ThreadLocal<>();
+
+    // so no one
     /**
      * Pause test for some time
      *
